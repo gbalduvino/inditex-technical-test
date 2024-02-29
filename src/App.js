@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { Grill } from './components/grill/Grill'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <DndProvider backend={HTML5Backend}>
+      <div className="App">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <span className="navbar-brand px-3">Technical test</span>
+        </nav>
+        <Grill></Grill>
+      </div>
+    </DndProvider>
+  )
 }
 
-export default App;
+export default App
